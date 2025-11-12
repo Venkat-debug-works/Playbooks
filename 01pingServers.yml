@@ -7,7 +7,12 @@
       ping:
       remote_user: ansible
     - name: changing somthing
-      copy
+      copy:
+        src: /opt
+        dest: /etc
+      ansible.builtin.apt:
+        name: apache2
+        state: present # Ensure the package is installed
 ...
 
 
